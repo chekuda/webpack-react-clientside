@@ -10,7 +10,19 @@
 ### Mode
   - Production
     For defining ufigyJsPlugin, sourceMapn and so on
+    Enables all sorts of optimizations out of the box. Including minification, scope hosting, tree-shaking and more
   - Development
     For defining dev server and other stuff
+    Its optimized for speed and does nothing more than providin an un-monified bundle
 
-    
+### Override the default entry/output
+
+  You can override the entry and output files
+
+### Transpiling ES6 with Babel
+
+  We need to use the plugin babel-loader in order to transpile ES6 to ES5. In order to make this works, we need to install some dependencies:
+  - babel-core
+  - babel-loader
+  - babel-preset-env
+
