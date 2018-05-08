@@ -27,12 +27,12 @@
   - babel-preset-env
 
   Add the configuration in a new file .babelsrc created in the root
-    ```{
+    `{
       "presets":{
         "env"
       }
 
-    }```
+    }`
 
 ### Extract CSS to a file
 
@@ -41,19 +41,18 @@
 
   - Add the configuration in webpack config
    In modules.rules
-    ```{
+    `{
         test: /\.css$/,
         use:[
           MiniCssEctraPlugin.loader,
           "css-loader"
         ]
-      }
-      ```
+      }`
     In plugins
-    ``` new MiniCssEctraPlugin({
+    ` new MiniCssEctraPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
-    })```
+    })`
 
   After all, create the css file and import it in
 
@@ -68,11 +67,11 @@
   - Install react and react-dom
   - Add the preset to babel in order to transpile the react components: npm i --save-dev babel-preset-react
   - Add the configuration to .babelsrc
-      ```{
+      `{
       "presets":{
         "env", "react"
       }
 
-    }```
+    }`
   - Add the configuration for reading jsx files in babel-loader
   - In order to process HTML, webpack needs html-webpack-plugin and html-loader
