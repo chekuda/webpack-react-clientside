@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import './App.css'
+
 const App = () => {
-  return <div>Jose</div>
+  return <div className="app-container">Jose</div>
 }
 
 export default App

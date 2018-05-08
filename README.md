@@ -47,3 +47,25 @@
     }```
   - Add the configuration for reading jsx files in babel-loader
   - In order to process HTML, webpack needs html-webpack-plugin and html-loader
+
+### Extract CSS to a file
+  - Im going to use mini-css-extract-plugin
+  NOTE: Make sure to update webpack to version 4.2.0. Otherwise mini-css-extract-plugin won’t work!
+
+  - Add the configuration in webpack config
+   In modules.rules
+    ```{
+        test: /\.css$/,
+        use:[
+          MiniCssEctraPlugin.loader,
+          "css-loader"
+        ]
+      }
+      ```
+    In plugins
+    ``` new MiniCssEctraPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    })```
+
+    After all, create the css file and import it in
