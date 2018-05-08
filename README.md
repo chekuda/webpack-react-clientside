@@ -34,21 +34,8 @@
 
     }```
 
-## React
-
-  - Install react and react-dom
-  - Add the preset to babel in order to transpile the react components: npm i --save-dev babel-preset-react
-  - Add the configuration to .babelsrc
-      ```{
-      "presets":{
-        "env", "react"
-      }
-
-    }```
-  - Add the configuration for reading jsx files in babel-loader
-  - In order to process HTML, webpack needs html-webpack-plugin and html-loader
-
 ### Extract CSS to a file
+
   - Im going to use mini-css-extract-plugin
   NOTE: Make sure to update webpack to version 4.2.0. Otherwise mini-css-extract-plugin won’t work!
 
@@ -68,4 +55,24 @@
       chunkFilename: '[id].css'
     })```
 
-    After all, create the css file and import it in
+  After all, create the css file and import it in
+
+### Webpack dev server
+
+  - Install webpack-dev-server
+  - Will launch the app inside the browser
+  - Add the script: `webpack-dev-server --mode-development --open`
+
+## React
+
+  - Install react and react-dom
+  - Add the preset to babel in order to transpile the react components: npm i --save-dev babel-preset-react
+  - Add the configuration to .babelsrc
+      ```{
+      "presets":{
+        "env", "react"
+      }
+
+    }```
+  - Add the configuration for reading jsx files in babel-loader
+  - In order to process HTML, webpack needs html-webpack-plugin and html-loader
