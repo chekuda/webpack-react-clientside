@@ -26,3 +26,23 @@
   - babel-loader
   - babel-preset-env
 
+  Add the configuration in a new file .babelsrc created in the root
+    ```{
+      "presets":{
+        "env"
+      }
+
+    }```
+
+## React
+
+  Install react and react-dom
+  Add the preset to babel in order to transpile the react components: npm i --save-dev babel-preset-react
+  Add the configuration to .babelsrc
+      ```{
+      "presets":{
+        "env", "react"
+      }
+
+    }```
+  Add the configuration for reading jsx files in babel-loader
