@@ -36,13 +36,13 @@
     }
   ```
 
-
 ### Extract CSS to a file
 
   - Im going to use mini-css-extract-plugin
   NOTE: Make sure to update webpack to version 4.2.0. Otherwise mini-css-extract-plugin won’t work!
 
   - Add the configuration in webpack config
+
    In modules.rules:
 
   ```
@@ -77,8 +77,9 @@
 
   - Install react and react-dom
   - Add the preset to babel in order to transpile the react components: npm i --save-dev babel-preset-react
+
   - Add the configuration to .babelsrc:
-    
+
   ```
     {
       "presets":{
