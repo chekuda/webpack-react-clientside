@@ -2,6 +2,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssEctraPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
+  entry: [
+    'react-hot-loader/patch',
+    './src/index.js' // my app entry point
+  ],
   module: {
     rules: [
       {
