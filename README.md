@@ -117,6 +117,7 @@
       "plugins": ["react-hot-loader/babel]
     }
     ```
+
   2. By webpack
     ```
     {
@@ -127,6 +128,7 @@
       }]
     }
     ```
+
   `Note: react-hot-loader/webpack only works in exported components, whereas react-hot-loader/babel picks up all top-level variables in your files. As a workaround, with webpack, you can export all the components whose state you want to maintain, even if they are not imported anywere else.`
 
   3. Add this lines in your webpack entry point.
@@ -138,6 +140,8 @@
       ]
     }
     ```
+
   4. Wrap my entry file with a top-level component provided by RHL called `<AppContainer>` which hanle hot reloading as well as error handling. Also handles disabling hot reloading/error handling when running in production environment.
 
   `Note: If I dont want to duplicate the require in the entry component, I will have to put `modules: false` in my .babelsrc`
+
