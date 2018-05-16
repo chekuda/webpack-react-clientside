@@ -134,7 +134,7 @@
   3. Add this lines in your webpack entry point.
     ```
     {
-      entry: [ 
+      entry: [
         'react-hot-loader/patch', // RHL patch
       './scripts/index' // Your appʼs entry point
       ]
@@ -143,5 +143,33 @@
 
   4. Wrap my entry file with a top-level component provided by RHL called `<AppContainer>` which hanle hot reloading as well as error handling. Also handles disabling hot reloading/error handling when running in production environment.
 
+    ```
+    import React from 'react'
+    import ReactDOM from 'react-dom'
+    import { AppContainer } from 'react-hot-loader'
+    import App from './pages/App/App.jsx'
+
+    const render = Component => {
+      ReactDOM.render(
+        <AppContainer>
+          <Component />
+        </ AppContainer>,
+        document.getElementById('app')
+      )
+    }
+
+    render(App)
+
+    if(module.hot) {
+      module.hot.accept('./pages/App/App.jsx', () => {
+        render(App)
+      })
+    }
+    ```
+
   `Note: If I dont want to duplicate the require in the entry component, I will have to put `modules: false` in my .babelsrc`
+
+  ```
+    [ "env", { "modules": false } ],
+  ```
 
