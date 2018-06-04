@@ -3,16 +3,21 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    './src/index.js' // my app entry point
+    './src/index.jsx' // my app entry point
   ],
   module: {
     rules: [
       {
         test: /\.js|jsx$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: [
+          {
+            loader: 'babel-loader'
+          },
+          {
+            loader: 'eslint-loader'
+          }
+        ]
       },
       {
         test: /\.html$/,
@@ -27,12 +32,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use:[
-          "style-loader",
-          "css-loader"
+        use: [
+          'style-loader',
+          'css-loader'
         ]
       }
-    ],
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({

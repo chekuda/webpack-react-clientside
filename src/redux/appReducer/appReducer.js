@@ -8,7 +8,7 @@ export const changeText = (text) => {
 }
 
 const reducer = (state = {}, action = {}) => {
-  switch(action.type) {
+  switch (action.type) {
     case CHANGE_TEXT:
       const { text } = action.payload
 
