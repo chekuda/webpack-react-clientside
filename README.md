@@ -38,8 +38,10 @@
 
 ### Extract CSS to a file
 
-  - Im going to use mini-css-extract-plugin
+  - I would use mini-css-extract-plugin (only for server side with exctracted-loader in order to use HMR)
   NOTE: Make sure to update webpack to version 4.2.0. Otherwise mini-css-extract-plugin won’t work!
+
+  - Im using style-loader for client side
 
   - Add the configuration in webpack config
 
