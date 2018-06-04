@@ -175,3 +175,39 @@
     [ "env", { "modules": false } ],
   ```
 
+## Redux
+
+- Install redux and react-redux
+- Extract the createStore `Creates a Redux store that holds the complete state tree of your app.`
+  - Arguments:
+    - 1. Reducer
+    - 2. InitialState
+    - 3. Third party capabilities
+
+- Extract the Provider `to magically make the store available to all container components in the application without passing it explicitly`
+  - Wrapp your root with the provider and pass the store previously generated with the createStore
+
+- Create a redux folder with all redux configuration
+  - Create a rootReducer file (reducers) with gather all the reducers within your project and injected as first argument in your createStore
+  - Create your first reducer with Actions and types in the same file `duck style` (many different ways of setting up)
+
+### Usage of store
+
+- When creating a container I need to connect it with the redux store so I will use `connect` from `react-redux`
+- When creating a connect I need to export it as default and passing the `store` and the `dispatch`
+
+```
+  const mapDispatchToProps = (dispatch) => ({
+  changeText: (text) => dispatch(changeText(text))
+  })
+
+  const mapStateToProps = ({ appReducer }) => ({
+    myState: appReducer
+  })
+
+  export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App)
+
+```
